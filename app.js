@@ -9,14 +9,10 @@ const connectDB = require("./db/connect");
 const connectionString = process.env.MONGO_URL;
 
 //middleware
+app.use(express.static("./public"));
 app.use(express.json());
 
 //routes
-app.get("/hello", (req, res) => {
-  res.send("task manager app");
-});
-
-//routes middleware
 app.use("/api/v1/tasks", tasks);
 
 //port server running
