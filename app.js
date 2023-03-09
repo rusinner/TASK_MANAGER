@@ -20,8 +20,9 @@ app.use("/api/v1/tasks", tasks);
 app.use(notFound);
 app.use(errorHandlerMiddleware);
 
-//port server running
-const port = 3000;
+//port server running setting up like this beacuse on server it will
+//looking for different ports
+const port = process.env.PORT || 3000;
 
 //listening to the server if i am connected to DB
 const start = async () => {
